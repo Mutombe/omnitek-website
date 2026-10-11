@@ -1,9 +1,3 @@
-/* ==========================================================
-   OMNITEK, Tech Savvies
-   Brand ramp sampled from the logo: navy #004073 (mid), orange #EF4A27 (accent), sky #68CDE2 (light)
-   Every component below reads from these tokens only.
-   ========================================================== */
-
 @font-face{
   font-family:"Instrument Sans";
   src:url(assets/fonts/instrument-sans-latin.woff2) format("woff2");
@@ -12,15 +6,15 @@
 }
 
 :root{
-  /* ramp: dark > mid > light, plus accent */
-  --navy-950:#001a31;   /* dark: grounds, footer */
+
+  --navy-950:#001a31;
   --navy-900:#00284a;
-  --navy:#004073;       /* mid: brand fills, icons */
+  --navy:#004073;
   --navy-500:#0a5590;
-  --sky:#68cde2;        /* light: small accents */
+  --sky:#68cde2;
   --sky-100:#e2f6fa;
   --sky-ink:#16829a;
-  --orange:#ef4a27;     /* accent: the pop */
+  --orange:#ef4a27;
   --orange-600:#d93a18;
   --orange-300:#ff7a45;
   --orange-200:#ffb36b;
@@ -30,10 +24,9 @@
   --navy-100:#dde8f2;
   --gold:#ffd166;
 
-  /* neutrals */
   --white:#ffffff;
-  --paper:#fbfbfa;      /* warm off-white */
-  --paper-2:#f4f3ee;    /* alternate light ground */
+  --paper:#fbfbfa;
+  --paper-2:#f4f3ee;
   --canvas:#dfe3e8;
   --ink:#121417;
   --ink-2:#3b4048;
@@ -46,41 +39,34 @@
   --tint-2:#eceef1;
   --tint-3:#eef0f3;
 
-  /* status + third-party */
   --ok:#3ddc97;
   --danger:#d0321a;
   --live:#e5252a;
   --wa:#25d366;
   --wa-ink:#05301a;
 
-  /* mock-UI palette (room panel, terminal) */
   --room:#0f1d2b;  --room-edge:#1c2733;  --room-dim:#a8b3c0;  --room-slot:#2b3a4a;
   --term:#0e0b26;  --term-bar:#17133a;   --term-dim:#8d86c9;  --term-ink:#c9c3ff;  --term-o:#ff9a76;
   --tl-r:#ff5f57;  --tl-y:#febc2e;       --tl-g:#28c840;
 
-  /* shape */
   --r-xl:28px;  --r-lg:22px;  --r-md:16px;  --r-sm:12px;  --r-pill:999px;
-  --notch:18px;          /* concave fillet radius for the bite */
-  --bite-pad:8px;        /* gap between card edge and the pill sitting in the bite */
+  --notch:18px;
+  --bite-pad:8px;
 
-  /* space */
   --frame-w:1320px;
-  --frame-gap:28px;      /* vertical gap between frames */
-  --frame-side:64px;     /* total horizontal canvas visible around a frame */
-  --gutter:44px;         /* frame inner padding */
+  --frame-gap:28px;
+  --frame-side:64px;
+  --gutter:44px;
   --section-y:clamp(44px,6vw,64px);
   --hero-gap:12px;
 
-  /* motion */
   --ease:cubic-bezier(.22,.61,.36,1);
   --t-reveal:700ms;
   --t-hover:350ms;
 
-  /* elevation */
   --shadow:0 30px 80px -30px rgba(0,26,49,.28),0 2px 6px rgba(0,26,49,.05);
   --shadow-pop:0 24px 60px -20px rgba(0,26,49,.35);
 
-  /* texture (kept at the threshold of visibility) */
   --pat-grid:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
   --pat-grid-size:34px 34px;
   --pat-dots:radial-gradient(circle,rgba(0,40,72,.10) 1px,transparent 1.5px);
@@ -91,7 +77,6 @@
   --mono:ui-monospace,Consolas,"SFMono-Regular",monospace;
 }
 
-/* ---------- base ---------- */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:20px;overflow-x:clip}
 body{
@@ -110,7 +95,6 @@ h1,h2,h3,h4,p{margin:0}
 .skip:focus{left:8px}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 
-/* ---------- frames & grounds ---------- */
 .frame{
   --ground:var(--paper);
   width:min(var(--frame-w), calc(100% - var(--frame-side)));
@@ -126,7 +110,6 @@ h1,h2,h3,h4,p{margin:0}
 .ground-paper2{--ground:var(--paper-2);background-image:var(--pat-dots);background-size:var(--pat-dots-size)}
 .ground-dark{--ground:var(--navy-950);background-image:var(--pat-grid);background-size:var(--pat-grid-size);color:var(--white)}
 
-/* hero: fills one screen, tighter canvas, near-square top corners */
 .hero-frame{
   width:calc(100% - var(--hero-gap) * 2);
   margin-top:var(--hero-gap);
@@ -138,9 +121,6 @@ h1,h2,h3,h4,p{margin:0}
   padding-bottom:clamp(18px,3.6vh,44px);
 }
 
-/* ---------- signature: the bite ----------
-   A corner cut out of a card, holding a detached control, joined by two concave fillets.
-   Background must match the ground the card sits on (--ground). */
 .bite{
   position:absolute;right:0;bottom:0;z-index:3;
   padding:var(--bite-pad) 0 0 var(--bite-pad);
@@ -155,7 +135,6 @@ h1,h2,h3,h4,p{margin:0}
 .bite::before{right:0;top:calc(-1 * var(--notch))}
 .bite::after{left:calc(-1 * var(--notch));bottom:0}
 
-/* ---------- nav ---------- */
 .nav{
   display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;
   padding:4px 0 clamp(10px,2vh,18px);border-bottom:1px solid var(--line);
@@ -190,7 +169,6 @@ h1,h2,h3,h4,p{margin:0}
 }
 .pill-outline:hover{border-color:var(--ink);background:var(--ink);color:var(--white)}
 
-/* ---------- hero ---------- */
 .hero{flex:1;display:flex;flex-direction:column;min-height:0}
 .hero-head{
   display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:end;
@@ -200,7 +178,7 @@ h1,h2,h3,h4,p{margin:0}
 .eyebrow.light{color:var(--sky)}
 h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:500;letter-spacing:-.035em}
 .squiggle{position:relative;white-space:nowrap;color:var(--navy)}
-/* straight dotted underline that draws in left to right */
+
 .squiggle::after{
   content:"";position:absolute;left:0;right:0;bottom:-.08em;height:.13em;
   background:radial-gradient(circle closest-side,var(--orange) 92%,transparent) 0 50% / .26em .13em repeat-x;
@@ -222,7 +200,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .pill-arrow{width:40px;height:40px;border-radius:50%;background:var(--white);color:var(--ink);display:grid;place-items:center;transition:transform var(--t-hover) var(--ease)}
 .pill-arrow svg{width:18px;height:18px}
 
-/* ---------- expanding cards (carousel) ---------- */
 .cards{display:flex;gap:14px;flex:1;min-height:300px}
 .card{
   --ground:var(--paper);
@@ -270,7 +247,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 }
 .card.is-active .rail-label{opacity:0}
 
-/* bite on hero cards: appears with the expanded card */
 .card .bite{opacity:0;transform:translate(10px,10px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .card.is-active .bite{opacity:1;transform:none;transition-delay:.3s}
 .round-arrow{
@@ -280,15 +256,14 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .round-arrow:hover{background:var(--orange)}
 .round-arrow.light{background:var(--white);color:var(--ink);width:46px;height:46px}
 
-/* carousel progress: thin bar along the top of the open card */
-.card-progress{position:absolute;left:0;top:0;height:3px;width:100%;background:var(--orange);transform-origin:left;transform:scaleX(0);opacity:0;z-index:2}
-.cards.run .card.is-active .card-progress{opacity:1;animation:cardProgress 4.5s linear forwards}
-@keyframes cardProgress{to{transform:scaleX(1)}}
+.card-trace{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible;opacity:0}
+.card-trace path{fill:none;stroke:var(--orange);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1}
+.cards.run .card.is-active .card-trace{opacity:1}
+.cards.run .card.is-active .card-trace path{animation:cardTrace var(--cycle,4.5s) linear forwards}
+@keyframes cardTrace{to{stroke-dashoffset:0}}
 
-/* mobile card switcher (built by JS, shown under 900px) */
 .card-tabs{display:none}
 
-/* ---------- marquee: the accent band ---------- */
 .marquee{
   width:min(var(--frame-w), calc(100% - var(--frame-side)));margin:0 auto;
   overflow:hidden;padding:14px 0;border-radius:var(--r-pill);
@@ -303,14 +278,12 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .marquee i:nth-of-type(3n+1){background:var(--navy)}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
-/* ---------- section heads ---------- */
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
 .h2{font-size:clamp(30px,3.6vw,48px);line-height:1.06;letter-spacing:-.03em;font-weight:500}
 .muted{color:var(--muted-2)}
 .accent{color:var(--orange)}
 .lead{font-size:17px;color:var(--ink-2);line-height:1.6}
 
-/* ---------- tabs ---------- */
 .tabs{display:flex;gap:6px;background:var(--tint-3);padding:6px;border-radius:var(--r-pill);flex-wrap:wrap}
 .tabs button{height:44px;padding:0 18px;border-radius:var(--r-pill);display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--ink-2);transition:var(--t-hover)}
 .tabs button[aria-selected="true"]{background:var(--white);color:var(--ink);box-shadow:0 6px 16px -8px rgba(0,0,0,.3)}
@@ -335,7 +308,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .feat b{font-size:16px;display:block;margin-bottom:2px}
 .feat p{font-size:14.5px;color:var(--muted)}
 
-/* bento layouts */
 .bento{display:grid;gap:14px;min-height:520px}
 .ph{margin:0;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--tint-2)}
 .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
@@ -351,7 +323,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .bento-it .ph-b{grid-row:1 / 3;grid-column:2}
 .bento-it .ph-a,.bento-it .term{grid-column:1}
 
-/* solar energy-flow tile */
 .flow{
   position:relative;border-radius:var(--r-lg);color:var(--white);padding:18px;min-height:300px;overflow:hidden;
   background:var(--pat-grid),radial-gradient(120% 80% at 50% 50%,var(--navy-500) 0%,var(--navy) 35%,var(--navy-950) 100%);
@@ -374,12 +345,10 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .cta-tile{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 16px 16px 22px;border-radius:var(--r-lg);background-color:var(--orange);background-image:var(--pat-hatch);color:var(--white);font-weight:600;font-size:17px;transition:background-color var(--t-hover)}
 .cta-tile:hover{background-color:var(--orange-600)}
 
-/* CCTV monitor overlay */
 .rec{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);color:var(--white);font:600 11px/1 var(--mono);letter-spacing:.06em;padding:7px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
 .rec i{width:8px;height:8px;border-radius:50%;background:var(--live);animation:blink 1.2s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
 
-/* room booking UI */
 .room-ui{border-radius:var(--r-lg);background:var(--room);color:var(--white);padding:20px;display:flex;flex-direction:column;gap:8px;border:6px solid var(--room-edge);min-width:0}
 .room-top{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:15px}
 .room-time{color:var(--sky)}
@@ -397,7 +366,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .sign-line{font-size:28px;font-weight:600;line-height:1.1;letter-spacing:-.02em;transition:opacity .4s,transform .4s var(--ease);max-width:90%;position:relative;z-index:1}
 .sign-line.out{opacity:0;transform:translateY(8px)}
 
-/* terminal */
 .term{border-radius:var(--r-lg);background:var(--term);color:var(--term-ink);overflow:hidden;display:flex;flex-direction:column;min-height:200px}
 .term-bar{display:flex;align-items:center;gap:6px;padding:12px 14px;background:var(--term-bar);font:12px var(--mono);color:var(--term-dim)}
 .term-bar i{width:10px;height:10px;border-radius:50%;background:var(--tl-r)}
@@ -407,7 +375,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .term .ok{color:var(--ok)}.term .k{color:var(--sky)}.term .o{color:var(--term-o)}
 .cursor{display:inline-block;width:8px;height:14px;background:var(--term-ink);vertical-align:-2px;animation:blink 1s steps(2) infinite}
 
-/* ---------- smart sites ---------- */
 .smart{display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:center}
 .smart-media{position:relative;border-radius:var(--r-lg);overflow:hidden;height:100%;min-height:560px}
 .smart-media img{width:100%;height:100%;object-fit:cover;object-position:40% 50%;position:absolute;inset:0}
@@ -433,7 +400,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .checks li{display:flex;gap:10px;align-items:flex-start;font-size:15px;font-weight:500}
 .checks svg{width:20px;height:20px;padding:3px;border-radius:50%;background:var(--orange);color:var(--white);margin-top:1px}
 
-/* ---------- process ---------- */
 .process{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:center}
 .process-media{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:600px;height:100%}
 .process-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 55%}
@@ -447,7 +413,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .steps b{font-size:17px;display:block;margin:4px 0 2px}
 .steps p{color:var(--muted);font-size:15px}
 
-/* ---------- why (dark ground) ---------- */
 .why{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;overflow:hidden}
 .why::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:70px solid rgba(0,64,115,.55);left:-180px;bottom:-260px;pointer-events:none}
 .why-copy{position:relative}
@@ -468,7 +433,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .dots i{width:14px;height:14px;border-radius:50%;margin-right:-4px;border:2px solid var(--white)}
 .dots i:nth-child(1){background:var(--orange)}.dots i:nth-child(2){background:var(--navy)}.dots i:nth-child(3){background:var(--sky)}
 
-/* ---------- about ---------- */
 .about-intro{max-width:440px;color:var(--ink-2);font-size:16.5px}
 .about-grid{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:14px}
 .about-grid article{border-radius:var(--r-lg);padding:28px;position:relative;overflow:hidden}
@@ -493,7 +457,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .chips span{padding:9px 15px;border-radius:var(--r-pill);background:var(--white);font-size:14px;font-weight:600;border:1px solid var(--line);transition:var(--t-hover)}
 .chips span:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
 
-/* ---------- contact ---------- */
 .contact{
   display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;color:var(--white);overflow:hidden;
   background:linear-gradient(90deg,rgba(8,12,18,.86) 0%,rgba(8,12,18,.6) 40%,rgba(8,12,18,.08) 90%),var(--img) center 35%/cover;
@@ -525,7 +488,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .send .pill-outline{height:54px}
 .fine{color:var(--muted);font-size:12.5px}
 
-/* ---------- footer (dark ground) ---------- */
 .footer{background-color:var(--navy-950);background-image:var(--pat-grid);background-size:var(--pat-grid-size);color:rgba(255,255,255,.75);margin-top:60px;padding:64px 0 0}
 .foot-inner{width:min(var(--frame-w),calc(100% - var(--frame-side)));margin:auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px}
 .foot-brand img{height:96px;width:auto;margin-bottom:18px}
@@ -545,16 +507,11 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .wa-fab svg{width:30px;height:30px}
 .wa-fab:hover{transform:translateY(-4px)}
 
-/* ---------- reveal on scroll (hidden state only when JS is running) ---------- */
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity var(--t-reveal) var(--ease) var(--d,0ms),transform var(--t-reveal) var(--ease) var(--d,0ms)}
 .js .reveal.in{opacity:1;transform:none}
 
-/* grid children may shrink below their content width */
 .panel>*,.smart>*,.process>*,.why>*,.contact>*,.hero-head>*,.about-grid>*,.bento>*{min-width:0}
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
 @media (max-width:1100px){
   :root{--gutter:28px;--frame-side:40px}
   .nav-links{gap:20px}
@@ -566,7 +523,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   .foot-inner{grid-template-columns:1fr 1fr}
 }
 
-/* short viewports: let the hero grow and scroll rather than crushing it */
 @media (max-height:560px){
   .hero-frame{height:auto;max-height:none}
   .cards{flex:none;height:420px}
@@ -588,7 +544,7 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 
   .hero-head{grid-template-columns:1fr;gap:clamp(12px,2vh,22px)}
   .hero-aside{justify-self:stretch;max-width:none}
-  /* phone hero: one card at a time, switched by the pills underneath */
+
   .cards{flex-direction:column;gap:10px}
   .card{flex:1 1 auto}
   .js .card:not(.is-active){display:none}
@@ -612,7 +568,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   h1 br{display:none}
   .hero-aside p{font-size:15px}
 
-  /* buttons: full width, label centred, pill shape kept */
   .hero-aside .pill-dark,.smart-copy .pill-dark,.send .pill-dark,.send .pill-outline{width:100%;justify-content:center;padding:0 54px}
   .pill-dark .pill-arrow{position:absolute;right:7px;top:50%;translate:0 -50%}
   .pill-dark.sm{padding:0 46px 0 16px}
@@ -624,7 +579,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   .tabs button{flex:1;justify-content:center;padding:0 6px;font-size:13px;gap:6px}
   .tabs .dot{width:8px;height:8px}
 
-  /* bentos: tiles stay two up */
   .bento{min-height:0;grid-template-columns:1fr 1fr;grid-template-rows:none}
   .bento>*{grid-row:auto!important;grid-column:auto!important}
   .bento .ph-a{grid-column:1 / -1!important;min-height:220px}
@@ -656,14 +610,12 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   .row2{grid-template-columns:1fr 1fr}
   .svc-pick span{padding:10px 4px;font-size:12px}
 
-  /* footer: link columns stay two up */
   .foot-inner{grid-template-columns:1fr 1fr;gap:28px 20px}
   .foot-brand,.foot-contact{grid-column:1 / -1}
   .foot-bar{flex-direction:column;gap:12px;align-items:flex-start}
   .wa-fab{right:14px;bottom:14px;width:52px;height:52px}
 }
 
-/* smallest phones: unwind the two-up decisions that no longer fit */
 @media (max-width:380px){
   .bento{grid-template-columns:1fr}
   .bento>*{grid-column:auto!important;aspect-ratio:auto!important}
@@ -679,7 +631,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   html{scroll-behavior:auto}
 }
 
-/* phone spacing that lets one-line copy stay on one line */
 @media (max-width:640px){
   .feat li{padding:10px 0;gap:12px}
   .fi{width:38px;height:38px;border-radius:11px}
@@ -692,26 +643,20 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   .steps::before{left:20px}
 }
 
-/* hero card on phones: copy keeps its space, the icon panel becomes one row of four */
 .card-body p,.widget{flex:none}
 @media (max-width:900px){
   .widget{--tile:44px;grid-template-columns:repeat(4,var(--tile));gap:8px;padding:10px;border-radius:var(--r-md)}
   .widget .w-tile:nth-child(n+5){display:none}
   .card-body p{-webkit-line-clamp:3}
 }
-/* WhatsApp button waits until the visitor is past the hero */
+
 .js .wa-fab{opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity var(--t-hover),transform var(--t-hover) var(--ease)}
 .js body.past-hero .wa-fab{opacity:1;transform:none;pointer-events:auto}
-/* decorative bubbles stay behind the mission text */
+
 .mission .tag,.mission p{position:relative;z-index:1}
 .bubbles{position:absolute;inset:0;z-index:0;pointer-events:none}
 @media (max-width:640px){.bubbles i:nth-child(4),.bubbles i:nth-child(2){display:none}}
 
-/* ==========================================================
-   MULTI-PAGE COMPONENTS
-   ========================================================== */
-
-/* ---------- type role 2: the symbolic accent (used four times, never functional) ---------- */
 @font-face{
   font-family:"Sacramento";
   src:url(assets/fonts/sacramento-latin.woff2) format("woff2");
@@ -724,7 +669,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .vision-sign{font-size:40px;color:var(--white);opacity:.9;margin-top:10px}
 .h1-note{display:inline-block;font-size:.62em;color:var(--orange);transform:rotate(-4deg) translateY(-.15em);margin-left:.25em;letter-spacing:0}
 
-/* ---------- texture: column rules on white sheets (dropped on phones) ---------- */
 .ruled{isolation:isolate}
 .ruled::after{
   content:"";position:absolute;inset:0 var(--gutter);z-index:-1;pointer-events:none;
@@ -735,20 +679,17 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   opacity:.7;
 }
 
-/* ---------- nav: current page ---------- */
 .nav-links>a[aria-current="page"],.dd.is-current>.dd-btn{color:var(--ink);font-weight:600;position:relative}
 .nav-links>a[aria-current="page"]::after,.dd.is-current>.dd-btn::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;background:var(--orange)}
 .dd.is-current>.dd-btn::after{right:18px}
 .dd-menu a[aria-current="page"]{background:var(--tint-1)}
 
-/* ---------- links ---------- */
 .text-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;color:var(--navy);border-bottom:2px solid var(--orange);padding-bottom:2px;transition:gap var(--t-hover) var(--ease)}
 .text-link svg{width:16px;height:16px}
 .text-link:hover{gap:12px}
 .text-link.on-dark{color:var(--white)}
 .sec-aside{max-width:400px;color:var(--ink-2);font-size:16.5px}
 
-/* ---------- inner-page hero ---------- */
 .hero-frame.page-hero{height:auto;min-height:0;max-height:none}
 .crumbs{display:flex;align-items:center;gap:8px}
 .crumbs a{color:var(--muted)}
@@ -766,7 +707,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .bite-pill{padding:var(--bite-pad) 0 0 var(--bite-pad)}
 .smart-hero .ctrl{right:18px;bottom:18px}
 
-/* ---------- service cards (each carries the bite) ---------- */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .svc-card{
   position:relative;border-radius:var(--r-lg);padding:26px 24px 84px;overflow:hidden;
@@ -791,7 +731,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .svc-card.accent .mini li::before{background:var(--white)}
 .svc-card .bite .round-arrow{width:48px;height:48px}
 
-/* ---------- split sections ---------- */
 .split{display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:center}
 .split.rev>:first-child{order:2}
 .split>*{min-width:0}
@@ -811,19 +750,16 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .day-steps b{display:block;font-size:17px}
 .day-steps p{color:var(--muted);font-size:15px}
 
-/* ---------- gallery ---------- */
 .gallery{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;min-height:420px}
 .list-tile{border-radius:var(--r-lg);padding:26px;background-color:var(--navy-950);background-image:var(--pat-grid);background-size:24px 24px;color:var(--white);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
 .lt-title{font-size:22px;font-weight:600;letter-spacing:-.02em}
 .checks.light li{color:var(--white)}
 
-/* ---------- about: story ---------- */
 .story{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
 .story-body{display:grid;gap:18px;font-size:17px;color:var(--ink-2);padding-top:34px}
 .story-body p:first-child{font-size:20px;color:var(--ink);font-weight:500;line-height:1.45}
 .vision>div{display:grid}
 
-/* ---------- CTA band (every page except contact) ---------- */
 .cta-band{
   display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;color:var(--white);overflow:hidden;
   background:linear-gradient(90deg,rgba(8,12,18,.86) 0%,rgba(8,12,18,.62) 45%,rgba(8,12,18,.2) 100%),var(--img) center 38%/cover;
@@ -837,7 +773,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .pill-ghost svg{width:20px;height:20px;color:var(--wa)}
 .pill-ghost:hover{background:rgba(255,255,255,.12);border-color:var(--white)}
 
-/* ---------- contact page ---------- */
 .contact-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;align-items:stretch}
 .contact-grid>*{min-width:0}
 .contact-page .quote{box-shadow:none;border:1px solid var(--line);background:var(--white)}
@@ -856,7 +791,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .map-link svg{width:20px;height:20px;color:var(--orange)}
 .map-link .ext{margin-left:auto;width:16px;height:16px;color:var(--white);opacity:.7}
 
-/* ---------- multi-page responsive ---------- */
 @media (max-width:1100px){
   .svc-grid{grid-template-columns:1fr 1fr}
   .split,.story,.cta-band,.contact-grid{grid-template-columns:1fr}
@@ -923,7 +857,6 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
   .ui-pair{grid-template-columns:1fr}
 }
 
-/* ---------- fixes from the per-page phone review ---------- */
 .footer .foot-inner .foot-sign{font-size:40px;line-height:1;margin:-4px 0 18px}
 .smart-copy .checks{margin-bottom:28px}
 @media (max-width:640px){
@@ -939,13 +872,12 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 .bubbles i:nth-child(4){display:none}
 .bubbles i:nth-child(2){right:28px;bottom:118px;width:30px;height:30px}
 
-/* phone hero: at least one screen tall, but grows if its content needs more room (never spills out) */
 @media (max-width:900px){
   .hero-frame:not(.page-hero){height:auto;min-height:calc(100vh - var(--hero-gap) * 2);min-height:calc(100svh - var(--hero-gap) * 2);max-height:none}
   .cards{min-height:280px}
   .card-tabs{margin-top:10px}
 }
-/* short phones: drop the intro line (the card repeats it) and tighten, so the hero still fits one screen */
+
 @media (max-width:900px) and (max-height:780px){
   .hero:not(.page-head) .hero-aside p{display:none}
   .hero-head{padding:14px 0 12px;gap:12px}

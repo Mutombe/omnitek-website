@@ -64,6 +64,7 @@ def build_page(path):
                 .replace("{{cta}}", partial("cta").replace("{{cta_query}}", meta.get("cta_query", "")))
                 .replace("{{footer}}", partial("footer")))
     html = HEAD.format(**{k: meta.get(k, "") for k in ("title", "description", "page")}) + partial("sprite") + body + TAIL
+    html = re.sub(r"[ \t]*<!--.*?-->[ \t]*\n?", "", html, flags=re.S)
     (OUT / path.name).write_text(html, encoding="utf8")
     return path.name
 

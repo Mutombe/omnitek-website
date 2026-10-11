@@ -4,7 +4,6 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const phone = matchMedia('(max-width: 900px)');
 
-  /* ---------- mobile menu & dropdowns ---------- */
   const menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
   const setMenu = open => {
     navLinks.classList.toggle('open', open);
@@ -25,13 +24,37 @@
     if (e.target.closest('.nav-links a') || (!e.target.closest('.nav') && navLinks.classList.contains('open'))) setMenu(false);
   });
 
-  /* ---------- home hero: expanding cards + carousel ---------- */
   const cardWrap = $('#heroCards');
   if (cardWrap) {
     const cards = $$('.card', cardWrap);
-    cards.forEach(c => c.insertAdjacentHTML('beforeend', '<span class="card-progress" aria-hidden="true"></span>'));
+    cards.forEach(c => c.insertAdjacentHTML('beforeend', '<svg class="card-trace" aria-hidden="true"><path pathLength="1"/></svg>'));
 
-    // phone switcher: one pill per card, under the open card
+    const tracePath = card => {
+      const w = card.clientWidth, h = card.clientHeight;
+      const cs = getComputedStyle(card);
+      const r = parseFloat(cs.borderTopLeftRadius) || 0;
+      const bite = card.querySelector('.bite');
+      if (!bite || !w || !h) return '';
+      const n = parseFloat(cs.getPropertyValue('--notch')) || 18;
+      const R = parseFloat(getComputedStyle(bite).borderTopLeftRadius) || r;
+      const bx = bite.offsetLeft, by = bite.offsetTop;
+      return [
+        `M ${r} 0`, `H ${w - r}`, `A ${r} ${r} 0 0 1 ${w} ${r}`,
+        `V ${by - n}`, `A ${n} ${n} 0 0 1 ${w - n} ${by}`,
+        `H ${bx + R}`, `A ${R} ${R} 0 0 0 ${bx} ${by + R}`,
+        `V ${h - n}`, `A ${n} ${n} 0 0 1 ${bx - n} ${h}`,
+        `H ${r}`, `A ${r} ${r} 0 0 1 0 ${h - r}`,
+        `V ${r}`, `A ${r} ${r} 0 0 1 ${r} 0`, 'Z'
+      ].join(' ');
+    };
+    const drawTrace = card => {
+      const svg = card.querySelector('.card-trace');
+      svg.setAttribute('viewBox', `0 0 ${card.clientWidth} ${card.clientHeight}`);
+      svg.querySelector('path').setAttribute('d', tracePath(card));
+    };
+    const ro = new ResizeObserver(entries => entries.forEach(e => drawTrace(e.target)));
+    cards.forEach(c => { ro.observe(c); drawTrace(c); });
+
     const tabsWrap = document.createElement('div');
     tabsWrap.className = 'card-tabs';
     tabsWrap.setAttribute('role', 'tablist');
@@ -48,6 +71,7 @@
 
     const canHover = matchMedia('(hover: hover) and (min-width: 901px)').matches;
     const CYCLE_MS = 4500;
+    cardWrap.style.setProperty('--cycle', CYCLE_MS + 'ms');
     let hoverTimer, autoTimer, paused = false;
     const current = () => cards.findIndex(c => c.classList.contains('is-active'));
     const kickProgress = () => { cardWrap.classList.remove('run'); void cardWrap.offsetWidth; cardWrap.classList.add('run'); };
@@ -73,7 +97,6 @@
       }
     });
     cardTabs.forEach(b => b.addEventListener('click', () => userActivate(cards.find(c => c.dataset.key === b.dataset.key))));
-    // hold still while the pointer or keyboard focus is on the cards, then carry on from there
     cardWrap.addEventListener('mouseenter', () => { paused = true; restartAuto(); });
     cardWrap.addEventListener('mouseleave', () => { paused = false; restartAuto(); });
     cardWrap.addEventListener('focusin', () => { paused = true; restartAuto(); });
@@ -81,7 +104,6 @@
     restartAuto();
   }
 
-  /* ---------- home: solution tabs ---------- */
   const tabs = $$('.tabs [role=tab]');
   const showTab = key => {
     tabs.forEach(t => {
@@ -103,7 +125,6 @@
     });
   });
 
-  /* ---------- comms widgets: room clock, booking, signage (any number per page) ---------- */
   const tick = () => $$('.room-time').forEach(c => { c.textContent = new Date().toTimeString().slice(0, 5); });
   tick(); setInterval(tick, 30000);
   $$('.room-ui').forEach(room => {
@@ -124,7 +145,6 @@
     }, 3200);
   }
 
-  /* ---------- IT: typing terminal (starts when visible) ---------- */
   const lines = [
     ['<span class="k">$</span> show interfaces status', 60],
     ['Gi1/0/1   connected   1000  <span class="ok">up</span>', 10],
@@ -156,7 +176,6 @@
   const termIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.offsetParent) { startTerminal(e.target); termIO.unobserve(e.target); } }), { threshold: .3 });
   $$('.term-text').forEach(p => termIO.observe(p));
 
-  /* ---------- smart control panels ---------- */
   const labels = { lights: ['On', 'Off'], cams: ['Recording', 'Paused'], gate: ['Open', 'Closed'], alarm: ['Armed', 'Tap to arm'] };
   $$('.ctrl').forEach(ctrl => {
     const state = $('.ctrl-state', ctrl);
@@ -168,9 +187,6 @@
     }));
   });
 
-  /* ---------- reveal on scroll ----------
-     Hidden state only exists under html.js, so a script failure never blanks the page.
-     Siblings cascade 85ms apart. A sweep catches anything a fast scroll carried past the observer. */
   const groups = ['.section', '.marquee', '.feat li', '.steps li', '.why-item', '.about-grid article', '.bento > *', '.svc-card', '.day-steps li', '.gallery > *'];
   const revealEls = [];
   groups.forEach(sel => $$(sel).forEach(el => {
@@ -193,15 +209,12 @@
   };
   addEventListener('scroll', () => { if (!sweepQueued) { sweepQueued = true; requestAnimationFrame(sweep); } }, { passive: true });
 
-  // flag once the top frame has scrolled away (the WhatsApp button shows from then on)
   const topFrame = $('.hero-frame');
   if (topFrame) new IntersectionObserver(([en]) => document.body.classList.toggle('past-hero', !en.isIntersecting), { threshold: .15 }).observe(topFrame);
   else document.body.classList.add('past-hero');
 
-  /* ---------- quote form → WhatsApp / email ---------- */
   const form = $('#quoteForm');
   if (form) {
-    // contact.html?service=security pre-selects the service
     const want = new URLSearchParams(location.search).get('service');
     const pre = want && $(`.svc-pick input[data-key="${want}"]`, form);
     if (pre) pre.checked = true;
@@ -236,7 +249,6 @@
 
   const yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ---------- initial tab state (runs last so everything above is ready) ---------- */
   if (tabs.length) {
     const deep = location.hash.slice(1);
     if (tabs.some(t => t.dataset.tab === deep)) { showTab(deep); $('#solutions').scrollIntoView(); }
