@@ -128,13 +128,13 @@ h1,h2,h3,h4,p{margin:0}
 
 /* hero: fills one screen, tighter canvas, near-square top corners */
 .hero-frame{
-  width:min(1400px, calc(100% - var(--hero-gap) * 2));
+  width:calc(100% - var(--hero-gap) * 2);
   margin-top:var(--hero-gap);
   border-radius:6px 6px var(--r-xl) var(--r-xl);
   display:flex;flex-direction:column;
   height:calc(100vh - var(--hero-gap) * 2);
   height:calc(100svh - var(--hero-gap) * 2);
-  min-height:560px;max-height:1040px;
+  min-height:560px;max-height:1200px;
   padding-bottom:clamp(18px,3.6vh,44px);
 }
 
