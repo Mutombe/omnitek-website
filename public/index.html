@@ -75,18 +75,18 @@
       <div class="dd" data-group="solutions">
         <button class="dd-btn" aria-expanded="false">Solutions <svg><use href="#i-chev"/></svg></button>
         <div class="dd-menu">
-          <a href="solar.html" data-page="solar"><span class="dot dot-orange"></span>Solar<small>On-grid, hybrid, EPCM, O&amp;M</small></a>
-          <a href="security.html" data-page="security"><span class="dot dot-navy"></span>Security<small>CCTV, alarms, access, intercoms</small></a>
-          <a href="communications.html" data-page="communications"><span class="dot dot-sky"></span>Communications<small>Video, phones, rooms, signage</small></a>
-          <a href="it-software.html" data-page="it"><span class="dot dot-violet"></span>IT &amp; Software<small>Networks, data centres, code</small></a>
+          <a href="solar.html" data-page="solar"><svg class="ic ic-orange"><use href="#i-sun"/></svg>Solar<small>On-grid, hybrid, EPCM, O&amp;M</small></a>
+          <a href="security.html" data-page="security"><svg class="ic ic-navy"><use href="#i-shield"/></svg>Security<small>CCTV, alarms, access, intercoms</small></a>
+          <a href="communications.html" data-page="communications"><svg class="ic ic-sky"><use href="#i-video"/></svg>Communications<small>Video, phones, rooms, signage</small></a>
+          <a href="it-software.html" data-page="it"><svg class="ic ic-violet"><use href="#i-network"/></svg>IT &amp; Software<small>Networks, data centres, code</small></a>
         </div>
       </div>
       <div class="dd" data-group="company">
         <button class="dd-btn" aria-expanded="false">Company <svg><use href="#i-chev"/></svg></button>
         <div class="dd-menu">
-          <a href="about.html" data-page="about"><span class="dot dot-navy"></span>About us<small>Background and values</small></a>
-          <a href="about.html#why"><span class="dot dot-orange"></span>Why Omnitek<small>Design, engineering, support</small></a>
-          <a href="about.html#process"><span class="dot dot-sky"></span>How we deliver<small>Survey to maintenance</small></a>
+          <a href="about.html" data-page="about"><svg class="ic ic-navy"><use href="#i-users"/></svg>About us<small>Background and values</small></a>
+          <a href="about.html#why"><svg class="ic ic-orange"><use href="#i-target"/></svg>Why Omnitek<small>Design, engineering, support</small></a>
+          <a href="about.html#process"><svg class="ic ic-sky"><use href="#i-hardhat"/></svg>How we deliver<small>Survey to maintenance</small></a>
         </div>
       </div>
       <a href="smart-sites.html" data-page="smart">Smart sites</a>
@@ -104,7 +104,7 @@
     <div class="hero-head">
       <div>
         <p class="eyebrow">Harare, Zimbabwe</p>
-        <h1>Reliable <span class="squiggle">energy</span> &amp; tech,<br> engineered for business</h1>
+        <h1>Reliable <a class="squiggle" id="heroWord" href="solar.html"><span>energy</span></a> &amp; tech,<br> engineered for business</h1>
       </div>
       <div class="hero-aside">
         <p>Solar power, security, communications and IT from one team, from the first site survey to years of maintenance.</p>
@@ -113,7 +113,7 @@
     </div>
 
     <div class="cards" id="heroCards">
-      <article class="card is-active" data-key="solar" data-label="Solar" tabindex="0" style="--img:url(assets/img/solar-install-team.jpg); --tint:linear-gradient(100deg,rgba(0,40,72,.82) 0%,rgba(0,40,72,.45) 38%,rgba(0,40,72,0) 62%); --rail:linear-gradient(180deg,rgba(239,74,39,.25),rgba(239,74,39,.8)); --pos:62% 40%">
+      <article class="card is-active" data-key="solar" data-word="energy" data-label="Solar" tabindex="0" style="--img:url(assets/img/solar-install-team.jpg); --tint:linear-gradient(100deg,rgba(0,40,72,.82) 0%,rgba(0,40,72,.45) 38%,rgba(0,40,72,0) 62%); --rail:linear-gradient(180deg,rgba(239,74,39,.25),rgba(239,74,39,.8)); --pos:62% 40%">
         <div class="card-body">
           <h2>Solar</h2>
           <p>On-grid and hybrid systems sized to your load. Lower bills, and power that stays on through outages.</p>
@@ -129,7 +129,7 @@
         <span class="bite"><a class="round-arrow" href="solar.html" aria-label="Explore solar"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
 
-      <article class="card" data-key="security" data-label="Security" tabindex="0" style="--img:url(assets/img/cctv-cameras.jpg); --tint:linear-gradient(100deg,rgba(0,40,72,.88) 0%,rgba(0,40,72,.5) 40%,rgba(0,40,72,.05) 70%); --rail:linear-gradient(180deg,rgba(0,64,115,.55),rgba(0,40,72,.92)); --pos:58% 50%">
+      <article class="card" data-key="security" data-word="security" data-label="Security" tabindex="0" style="--img:url(assets/img/cctv-cameras.jpg); --tint:linear-gradient(100deg,rgba(0,40,72,.88) 0%,rgba(0,40,72,.5) 40%,rgba(0,40,72,.05) 70%); --rail:linear-gradient(180deg,rgba(0,64,115,.55),rgba(0,40,72,.92)); --pos:58% 50%">
         <div class="card-body">
           <h2>Security</h2>
           <p>CCTV, alarms, access control and intercoms, installed as one system you can check from your phone.</p>
@@ -145,7 +145,7 @@
         <span class="bite"><a class="round-arrow" href="security.html" aria-label="Explore security"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
 
-      <article class="card" data-key="comms" data-label="Comms" tabindex="0" style="--img:url(assets/img/video-conferencing.jpg); --tint:linear-gradient(100deg,rgba(20,14,40,.88) 0%,rgba(20,14,40,.5) 40%,rgba(20,14,40,0) 66%); --rail:linear-gradient(180deg,rgba(239,74,39,.55),rgba(190,40,20,.9)); --pos:30% 40%">
+      <article class="card" data-key="comms" data-word="comms" data-label="Comms" tabindex="0" style="--img:url(assets/img/video-conferencing.jpg); --tint:linear-gradient(100deg,rgba(20,14,40,.88) 0%,rgba(20,14,40,.5) 40%,rgba(20,14,40,0) 66%); --rail:linear-gradient(180deg,rgba(239,74,39,.55),rgba(190,40,20,.9)); --pos:30% 40%">
         <div class="card-body">
           <h2>Comms</h2>
           <p>Video conferencing, telephone systems, room booking and digital signage for offices of any size.</p>
@@ -161,7 +161,7 @@
         <span class="bite"><a class="round-arrow" href="communications.html" aria-label="Explore communications"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
 
-      <article class="card" data-key="it" data-label="IT" tabindex="0" style="--img:url(assets/img/it-infrastructure.jpg); --tint:linear-gradient(100deg,rgba(14,10,46,.85) 0%,rgba(14,10,46,.45) 42%,rgba(14,10,46,0) 70%); --rail:linear-gradient(180deg,rgba(104,205,226,.25),rgba(60,40,140,.85)); --pos:62% 50%">
+      <article class="card" data-key="it" data-word="systems" data-label="IT" tabindex="0" style="--img:url(assets/img/it-infrastructure.jpg); --tint:linear-gradient(100deg,rgba(14,10,46,.85) 0%,rgba(14,10,46,.45) 42%,rgba(14,10,46,0) 70%); --rail:linear-gradient(180deg,rgba(104,205,226,.25),rgba(60,40,140,.85)); --pos:62% 50%">
         <div class="card-body">
           <h2>IT &amp; Software</h2>
           <p>Networks, structured cabling, data centres and custom software, designed and built by our engineers.</p>
@@ -187,7 +187,7 @@
   </div>
 </div>
 
-<section class="frame section ground-white ruled" id="solutions">
+<section class="frame section ground-white" id="solutions">
   <div class="sec-head">
     <div>
       <p class="eyebrow">What we do</p>
@@ -196,10 +196,10 @@
     <div class="tabs-wrap">
       <p class="script tabs-note" aria-hidden="true">pick one, or all four</p>
       <div class="tabs" role="tablist" aria-label="Solutions">
-        <button role="tab" aria-selected="true" data-tab="solar" id="t-solar" aria-controls="solar"><span class="dot dot-orange"></span>Solar</button>
-        <button role="tab" aria-selected="false" data-tab="security" id="t-security" aria-controls="security"><span class="dot dot-navy"></span>Security</button>
-        <button role="tab" aria-selected="false" data-tab="comms" id="t-comms" aria-controls="comms"><span class="dot dot-sky"></span>Comms</button>
-        <button role="tab" aria-selected="false" data-tab="it" id="t-it" aria-controls="it"><span class="dot dot-violet"></span>IT</button>
+        <button role="tab" aria-selected="true" data-tab="solar" id="t-solar" aria-controls="solar"><svg class="ic ic-orange"><use href="#i-sun"/></svg>Solar</button>
+        <button role="tab" aria-selected="false" data-tab="security" id="t-security" aria-controls="security"><svg class="ic ic-navy"><use href="#i-shield"/></svg>Security</button>
+        <button role="tab" aria-selected="false" data-tab="comms" id="t-comms" aria-controls="comms"><svg class="ic ic-sky"><use href="#i-video"/></svg>Comms</button>
+        <button role="tab" aria-selected="false" data-tab="it" id="t-it" aria-controls="it"><svg class="ic ic-violet"><use href="#i-network"/></svg>IT</button>
       </div>
     </div>
   </div>

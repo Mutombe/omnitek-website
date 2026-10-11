@@ -38,13 +38,14 @@
       const n = parseFloat(cs.getPropertyValue('--notch')) || 18;
       const R = parseFloat(getComputedStyle(bite).borderTopLeftRadius) || r;
       const bx = bite.offsetLeft, by = bite.offsetTop;
+      const k = r * (1 - Math.SQRT1_2);
       return [
-        `M ${r} 0`, `H ${w - r}`, `A ${r} ${r} 0 0 1 ${w} ${r}`,
+        `M ${k} ${k}`, `A ${r} ${r} 0 0 1 ${r} 0`, `H ${w - r}`, `A ${r} ${r} 0 0 1 ${w} ${r}`,
         `V ${by - n}`, `A ${n} ${n} 0 0 1 ${w - n} ${by}`,
         `H ${bx + R}`, `A ${R} ${R} 0 0 0 ${bx} ${by + R}`,
         `V ${h - n}`, `A ${n} ${n} 0 0 1 ${bx - n} ${h}`,
         `H ${r}`, `A ${r} ${r} 0 0 1 0 ${h - r}`,
-        `V ${r}`, `A ${r} ${r} 0 0 1 ${r} 0`, 'Z'
+        `V ${r}`, `A ${r} ${r} 0 0 1 ${k} ${k}`
       ].join(' ');
     };
     const drawTrace = card => {
@@ -63,8 +64,23 @@
     cardWrap.after(tabsWrap);
     const cardTabs = $$('button', tabsWrap);
 
+    const heroWord = $('#heroWord');
+    let wordTimer;
+    const setWord = card => {
+      const word = card.dataset.word, href = $('.bite a', card)?.getAttribute('href');
+      if (!heroWord || !word || heroWord.textContent === word) return;
+      clearTimeout(wordTimer);
+      heroWord.classList.add('swap');
+      wordTimer = setTimeout(() => {
+        heroWord.firstElementChild.textContent = word;
+        if (href) heroWord.setAttribute('href', href);
+        void heroWord.offsetWidth;
+        heroWord.classList.remove('swap');
+      }, reduce ? 0 : 260);
+    };
     const activate = card => {
       cards.forEach(c => c.classList.toggle('is-active', c === card));
+      setWord(card);
       cardTabs.forEach(b => b.setAttribute('aria-selected', b.dataset.key === card.dataset.key));
     };
     activate($('.card.is-active', cardWrap) || cards[0]);
