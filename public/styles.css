@@ -938,3 +938,18 @@ h1{font-size:clamp(2.1rem,min(5.1vw,7.4vh),4.1rem);line-height:1.04;font-weight:
 }
 .bubbles i:nth-child(4){display:none}
 .bubbles i:nth-child(2){right:28px;bottom:118px;width:30px;height:30px}
+
+/* phone hero: at least one screen tall, but grows if its content needs more room (never spills out) */
+@media (max-width:900px){
+  .hero-frame:not(.page-hero){height:auto;min-height:calc(100vh - var(--hero-gap) * 2);min-height:calc(100svh - var(--hero-gap) * 2);max-height:none}
+  .cards{min-height:280px}
+  .card-tabs{margin-top:10px}
+}
+/* short phones: drop the intro line (the card repeats it) and tighten, so the hero still fits one screen */
+@media (max-width:900px) and (max-height:780px){
+  .hero:not(.page-head) .hero-aside p{display:none}
+  .hero-head{padding:14px 0 12px;gap:12px}
+  .hero h1{font-size:clamp(1.9rem,8.4vw,2.3rem)}
+  .cards{min-height:250px}
+  .card-body p{-webkit-line-clamp:2}
+}
