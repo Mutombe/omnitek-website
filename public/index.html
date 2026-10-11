@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Omnitek | Solar, Security, Communications &amp; IT in Harare</title>
+  <title>Omnitek | Solar, Security, Communications & IT in Harare</title>
   <meta name="description" content="Omnitek designs, installs and maintains solar power, security systems, unified communications and IT networks for businesses in Zimbabwe.">
   <meta name="theme-color" content="#004073">
+  <meta property="og:title" content="Omnitek | Solar, Security, Communications & IT in Harare">
+  <meta property="og:description" content="Omnitek designs, installs and maintains solar power, security systems, unified communications and IT networks for businesses in Zimbabwe.">
+  <meta property="og:image" content="assets/img/solar-install-team.jpg">
   <script>document.documentElement.classList.add('js')</script>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -14,8 +17,7 @@
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
+<body data-page="home">
 <!-- ================= ICON SPRITE ================= -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -53,43 +55,49 @@
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.8zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.8 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a5 5 0 0 1-.6-10A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
-
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ================= HERO FRAME ================= -->
+<!-- ================= HERO ================= -->
 <div class="frame hero-frame" id="top">
   <header class="nav">
-    <a class="brand" href="#top" aria-label="Omnitek home">
+    <a class="brand" href="index.html" aria-label="Omnitek home">
       <img src="assets/omnitek-logo.png" alt="Omnitek, Tech Savvies" width="1216" height="599">
     </a>
 
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <div class="dd">
+      <div class="dd" data-group="solutions">
         <button class="dd-btn" aria-expanded="false">Solutions <svg><use href="#i-chev"/></svg></button>
         <div class="dd-menu">
-          <a href="#solar" data-tab="solar"><span class="dot dot-orange"></span>Solar<small>On-grid, hybrid, EPCM, O&amp;M</small></a>
-          <a href="#security" data-tab="security"><span class="dot dot-navy"></span>Security<small>CCTV, alarms, access, intercoms</small></a>
-          <a href="#comms" data-tab="comms"><span class="dot dot-sky"></span>Communications<small>Video, phones, rooms, signage</small></a>
-          <a href="#it" data-tab="it"><span class="dot dot-violet"></span>IT &amp; Software<small>Networks, data centres, code</small></a>
+          <a href="solar.html" data-page="solar"><span class="dot dot-orange"></span>Solar<small>On-grid, hybrid, EPCM, O&amp;M</small></a>
+          <a href="security.html" data-page="security"><span class="dot dot-navy"></span>Security<small>CCTV, alarms, access, intercoms</small></a>
+          <a href="communications.html" data-page="communications"><span class="dot dot-sky"></span>Communications<small>Video, phones, rooms, signage</small></a>
+          <a href="it-software.html" data-page="it"><span class="dot dot-violet"></span>IT &amp; Software<small>Networks, data centres, code</small></a>
         </div>
       </div>
-      <div class="dd">
+      <div class="dd" data-group="company">
         <button class="dd-btn" aria-expanded="false">Company <svg><use href="#i-chev"/></svg></button>
         <div class="dd-menu">
-          <a href="#about"><span class="dot dot-navy"></span>About us<small>Background and values</small></a>
-          <a href="#why"><span class="dot dot-orange"></span>Why Omnitek<small>Design, engineering, support</small></a>
-          <a href="#process"><span class="dot dot-sky"></span>How we deliver<small>Survey to maintenance</small></a>
+          <a href="about.html" data-page="about"><span class="dot dot-navy"></span>About us<small>Background and values</small></a>
+          <a href="about.html#why"><span class="dot dot-orange"></span>Why Omnitek<small>Design, engineering, support</small></a>
+          <a href="about.html#process"><span class="dot dot-sky"></span>How we deliver<small>Survey to maintenance</small></a>
         </div>
       </div>
-      <a href="#smart">Smart sites</a>
-      <a href="#contact">Contact</a>
+      <a href="smart-sites.html" data-page="smart">Smart sites</a>
+      <a href="contact.html" data-page="contact">Contact</a>
     </nav>
 
     <div class="nav-cta">
       <a class="icon-btn" href="tel:+263773275590" aria-label="Call +263 773 275 590"><svg><use href="#i-phone"/></svg></a>
-      <a class="pill-outline" href="#contact">Get a quote</a>
+      <a class="pill-outline" href="contact.html">Get a quote</a>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
     </div>
   </header>
@@ -102,7 +110,7 @@
       </div>
       <div class="hero-aside">
         <p>Solar power, security, communications and IT from one team, from the first site survey to years of maintenance.</p>
-        <a class="pill-dark" href="#contact">Request a quote <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a>
+        <a class="pill-dark" href="contact.html">Request a quote <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a>
       </div>
     </div>
 
@@ -121,7 +129,7 @@
           </div>
         </div>
         <span class="rail-label">Solar</span>
-        <span class="bite"><a class="round-arrow" href="#solar" data-tab="solar" aria-label="Explore solar"><svg><use href="#i-arrow"/></svg></a></span>
+        <span class="bite"><a class="round-arrow" href="solar.html" aria-label="Explore solar"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
 
       <article class="card" data-key="security" data-label="Security" tabindex="0" style="--img:url(assets/img/cctv-cameras.jpg); --tint:linear-gradient(100deg,rgba(0,40,72,.88) 0%,rgba(0,40,72,.5) 40%,rgba(0,40,72,.05) 70%); --rail:linear-gradient(180deg,rgba(0,64,115,.55),rgba(0,40,72,.92)); --pos:58% 50%">
@@ -137,7 +145,7 @@
           </div>
         </div>
         <span class="rail-label">Security</span>
-        <span class="bite"><a class="round-arrow" href="#security" data-tab="security" aria-label="Explore security"><svg><use href="#i-arrow"/></svg></a></span>
+        <span class="bite"><a class="round-arrow" href="security.html" aria-label="Explore security"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
 
       <article class="card" data-key="comms" data-label="Comms" tabindex="0" style="--img:url(assets/img/video-conferencing.jpg); --tint:linear-gradient(100deg,rgba(20,14,40,.88) 0%,rgba(20,14,40,.5) 40%,rgba(20,14,40,0) 66%); --rail:linear-gradient(180deg,rgba(239,74,39,.55),rgba(190,40,20,.9)); --pos:30% 40%">
@@ -153,7 +161,7 @@
           </div>
         </div>
         <span class="rail-label">Communications</span>
-        <span class="bite"><a class="round-arrow" href="#comms" data-tab="comms" aria-label="Explore communications"><svg><use href="#i-arrow"/></svg></a></span>
+        <span class="bite"><a class="round-arrow" href="communications.html" aria-label="Explore communications"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
 
       <article class="card" data-key="it" data-label="IT" tabindex="0" style="--img:url(assets/img/it-infrastructure.jpg); --tint:linear-gradient(100deg,rgba(14,10,46,.85) 0%,rgba(14,10,46,.45) 42%,rgba(14,10,46,0) 70%); --rail:linear-gradient(180deg,rgba(104,205,226,.25),rgba(60,40,140,.85)); --pos:62% 50%">
@@ -169,7 +177,7 @@
           </div>
         </div>
         <span class="rail-label">IT &amp; Software</span>
-        <span class="bite"><a class="round-arrow" href="#it" data-tab="it" aria-label="Explore IT and software"><svg><use href="#i-arrow"/></svg></a></span>
+        <span class="bite"><a class="round-arrow" href="it-software.html" aria-label="Explore IT and software"><svg><use href="#i-arrow"/></svg></a></span>
       </article>
     </div>
   </section>
@@ -184,17 +192,20 @@
 </div>
 
 <!-- ================= SOLUTIONS ================= -->
-<section class="frame section ground-white" id="solutions">
+<section class="frame section ground-white ruled" id="solutions">
   <div class="sec-head">
     <div>
       <p class="eyebrow">What we do</p>
       <h2 class="h2">One team for your power,<br><span class="muted">security, comms and IT</span></h2>
     </div>
-    <div class="tabs" role="tablist" aria-label="Solutions">
-      <button role="tab" aria-selected="true" data-tab="solar" id="t-solar" aria-controls="solar"><span class="dot dot-orange"></span>Solar</button>
-      <button role="tab" aria-selected="false" data-tab="security" id="t-security" aria-controls="security"><span class="dot dot-navy"></span>Security</button>
-      <button role="tab" aria-selected="false" data-tab="comms" id="t-comms" aria-controls="comms"><span class="dot dot-sky"></span>Comms</button>
-      <button role="tab" aria-selected="false" data-tab="it" id="t-it" aria-controls="it"><span class="dot dot-violet"></span>IT</button>
+    <div class="tabs-wrap">
+      <p class="script tabs-note" aria-hidden="true">pick one, or all four</p>
+      <div class="tabs" role="tablist" aria-label="Solutions">
+        <button role="tab" aria-selected="true" data-tab="solar" id="t-solar" aria-controls="solar"><span class="dot dot-orange"></span>Solar</button>
+        <button role="tab" aria-selected="false" data-tab="security" id="t-security" aria-controls="security"><span class="dot dot-navy"></span>Security</button>
+        <button role="tab" aria-selected="false" data-tab="comms" id="t-comms" aria-controls="comms"><span class="dot dot-sky"></span>Comms</button>
+        <button role="tab" aria-selected="false" data-tab="it" id="t-it" aria-controls="it"><span class="dot dot-violet"></span>IT</button>
+      </div>
     </div>
   </div>
 
@@ -209,6 +220,7 @@
         <li><span class="fi"><svg><use href="#i-hardhat"/></svg></span><div><b>EPCM</b><p>We engineer, buy and manage the build.</p></div></li>
         <li><span class="fi"><svg><use href="#i-wrench"/></svg></span><div><b>O&amp;M</b><p>Servicing that keeps output high.</p></div></li>
       </ul>
+      <a class="text-link" href="solar.html">Explore solar <svg><use href="#i-arrow"/></svg></a>
     </div>
     <div class="bento bento-solar">
       <figure class="ph ph-a"><img src="assets/img/solar-install-team.jpg" alt="Installation crew in hard hats lifting a solar panel onto a mounting frame" loading="lazy" width="1600" height="1198" style="object-position:50% 45%"><figcaption>Commercial installation</figcaption></figure>
@@ -229,7 +241,7 @@
         <span class="node n3"><svg><use href="#i-battery"/></svg>Battery</span>
         <span class="node n4"><svg><use href="#i-grid"/></svg>Grid</span>
       </div>
-      <a class="cta-tile" href="#contact" data-service="Solar Solutions">
+      <a class="cta-tile" href="contact.html?service=solar">
         <span>Size a system for your site</span>
         <span class="round-arrow light"><svg><use href="#i-arrow"/></svg></span>
       </a>
@@ -247,6 +259,7 @@
         <li><span class="fi"><svg><use href="#i-finger"/></svg></span><div><b>Access control</b><p>Fingerprint and card entry.</p></div></li>
         <li><span class="fi"><svg><use href="#i-cctv"/></svg></span><div><b>CCTV monitoring</b><p>HD cameras you can check anywhere.</p></div></li>
       </ul>
+      <a class="text-link" href="security.html">Explore security <svg><use href="#i-arrow"/></svg></a>
     </div>
     <div class="bento bento-sec">
       <figure class="ph ph-a"><img src="assets/img/cctv-cameras.jpg" alt="Twin CCTV cameras mounted on a building corner" loading="lazy" width="1600" height="1067" style="object-position:55% 50%"><figcaption>Perimeter cameras</figcaption></figure>
@@ -266,11 +279,12 @@
         <li><span class="fi"><svg><use href="#i-calendar"/></svg></span><div><b>Room booking</b><p>No more double-booked boardrooms.</p></div></li>
         <li><span class="fi"><svg><use href="#i-signage"/></svg></span><div><b>Digital signage</b><p>Screens that greet visitors.</p></div></li>
       </ul>
+      <a class="text-link" href="communications.html">Explore communications <svg><use href="#i-arrow"/></svg></a>
     </div>
     <div class="bento bento-comms">
       <figure class="ph ph-a"><img src="assets/img/video-conferencing.jpg" alt="Engineer presenting technical schematics on a large display screen" loading="lazy" width="1600" height="900" style="object-position:35% 40%"><figcaption>Presentation displays</figcaption></figure>
       <div class="room-ui" aria-label="Example room booking panel">
-        <div class="room-top"><span>Boardroom 2</span><span class="room-time num" id="roomClock">09:00</span></div>
+        <div class="room-top"><span>Boardroom 2</span><span class="room-time num">09:00</span></div>
         <p class="room-status"><i></i><span>Available</span></p>
         <p class="room-next">Next: ops review</p>
         <div class="room-slots"><span class="busy"></span><span></span><span></span><span class="busy"></span><span class="busy"></span><span></span><span></span><span class="busy"></span></div>
@@ -278,7 +292,7 @@
       </div>
       <div class="sign-ui" aria-hidden="true">
         <span class="sign-tag">Digital signage</span>
-        <p class="sign-line" id="signLine">Welcome to Head Office</p>
+        <p class="sign-line">Welcome to Head Office</p>
       </div>
     </div>
   </div>
@@ -294,24 +308,25 @@
         <li><span class="fi"><svg><use href="#i-code"/></svg></span><div><b>Software &amp; development</b><p>Licensed software and custom builds.</p></div></li>
         <li><span class="fi"><svg><use href="#i-printer"/></svg></span><div><b>Office devices &amp; supplies</b><p>Computers, printers and supplies.</p></div></li>
       </ul>
+      <a class="text-link" href="it-software.html">Explore IT &amp; software <svg><use href="#i-arrow"/></svg></a>
     </div>
     <div class="bento bento-it">
       <figure class="ph ph-a"><img src="assets/img/it-infrastructure.jpg" alt="Abstract circuit board with interlocking gears representing systems integration" loading="lazy" width="1600" height="844" style="object-position:58% 50%"><figcaption>Systems integration</figcaption></figure>
       <figure class="ph ph-b"><img src="assets/img/software-dev.jpg" alt="Developer reviewing code on a tablet at night" loading="lazy" width="1067" height="1600" style="object-position:50% 30%"><figcaption>Custom software</figcaption></figure>
       <div class="term" aria-hidden="true">
         <div class="term-bar"><i></i><i></i><i></i><span>omnitek@core-sw01</span></div>
-        <pre id="termText"></pre>
+        <pre class="term-text"></pre>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SMART SITES ================= -->
+<!-- ================= SMART SITES TEASER ================= -->
 <section class="frame section smart ground-paper2" id="smart">
   <div class="smart-media">
     <img src="assets/img/smart-home-panel.jpg" alt="Smiling woman using a wall-mounted smart control panel in her living room" loading="lazy" width="1600" height="1127">
-    <div class="ctrl" id="ctrl" aria-label="Example smart control panel">
-      <div class="ctrl-head"><b>Main House</b><span id="ctrlState">Disarmed</span></div>
+    <div class="ctrl" aria-label="Example smart control panel">
+      <div class="ctrl-head"><b>Main House</b><span class="ctrl-state">Disarmed</span></div>
       <div class="ctrl-grid">
         <button class="ctrl-btn on" data-k="lights" aria-pressed="true"><svg><use href="#i-bulb"/></svg><span>Lights</span><small>On</small></button>
         <button class="ctrl-btn on" data-k="cams" aria-pressed="true"><svg><use href="#i-cctv"/></svg><span>Cameras</span><small>Recording</small></button>
@@ -324,35 +339,12 @@
     <p class="eyebrow">Smart sites</p>
     <h2 class="h2">Arm the building<br><span class="muted">from your phone</span></h2>
     <p class="lead">Cameras, alarms, gate intercoms and lighting on one wall panel and one app. Check the gate from a meeting, arm the site as you leave.</p>
-    <div class="smart-sub">
-      <figure><img src="assets/img/smart-home-network.jpg" alt="Connected devices around a home: Wi-Fi, CCTV, lock, lighting and power" loading="lazy" width="1600" height="1067"></figure>
-      <ul class="checks">
-        <li><svg><use href="#i-check"/></svg>One app for cameras and alarms</li>
-        <li><svg><use href="#i-check"/></svg>Stays on through power cuts</li>
-        <li><svg><use href="#i-check"/></svg>Homes, offices and warehouses</li>
-      </ul>
-    </div>
-    <a class="pill-dark" href="#contact" data-service="Smart Security">Design my system <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a>
-  </div>
-</section>
-
-<!-- ================= PROCESS ================= -->
-<section class="frame section process ground-white" id="process">
-  <div class="process-media">
-    <img src="assets/img/solar-rooftop-aerial.jpg" alt="Aerial view of a crew installing solar panels on a commercial rooftop" loading="lazy" width="1600" height="1198">
-    <span class="badge-float"><svg><use href="#i-hardhat"/></svg>Installed and commissioned in-house</span>
-    <span class="bite bite-pill"><a class="pill-dark sm" href="#contact">Book a site survey <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a></span>
-  </div>
-  <div class="process-copy">
-    <p class="eyebrow">How we deliver</p>
-    <h2 class="h2">From the first site visit<br><span class="muted">to the service plan</span></h2>
-    <ol class="steps">
-      <li><span class="n num">01</span><div><b>Site survey</b><p>We measure loads and risks first.</p></div></li>
-      <li><span class="n num">02</span><div><b>Design</b><p>Specified for your building.</p></div></li>
-      <li><span class="n num">03</span><div><b>Procurement &amp; build</b><p>Our EPCM team runs the build.</p></div></li>
-      <li><span class="n num">04</span><div><b>Commissioning</b><p>Tested, documented, staff trained.</p></div></li>
-      <li><span class="n num">05</span><div><b>Maintenance</b><p>Scheduled servicing, year after year.</p></div></li>
-    </ol>
+    <ul class="checks">
+      <li><svg><use href="#i-check"/></svg>One app for cameras and alarms</li>
+      <li><svg><use href="#i-check"/></svg>Stays on through power cuts</li>
+      <li><svg><use href="#i-check"/></svg>Homes, offices and warehouses</li>
+    </ul>
+    <a class="pill-dark" href="smart-sites.html">See smart sites <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a>
   </div>
 </section>
 
@@ -366,6 +358,7 @@
       <div class="why-item"><span class="wi"><svg><use href="#i-hardhat"/></svg></span><b>Our own engineers</b><p>No subcontractors on your job.</p></div>
       <div class="why-item"><span class="wi"><svg><use href="#i-layers"/></svg></span><b>One number to call</b><p>Survey to repairs, years later.</p></div>
     </div>
+    <a class="text-link on-dark" href="about.html#process">How we deliver <svg><use href="#i-arrow"/></svg></a>
   </div>
   <figure class="why-media">
     <img src="assets/img/team-celebrating.jpg" alt="Team celebrating a finished project around a laptop" loading="lazy" width="1600" height="844">
@@ -373,21 +366,20 @@
   </figure>
 </section>
 
-<!-- ================= ABOUT ================= -->
+<!-- ================= ABOUT TEASER ================= -->
 <section class="frame section about" id="about">
   <div class="sec-head">
     <div>
       <p class="eyebrow">About Omnitek</p>
       <h2 class="h2">Energy and technology<br><span class="muted">for local conditions</span></h2>
     </div>
-    <p class="about-intro">A Harare company that pairs reliable power with modern systems, built for outages, heat and dust.</p>
+    <a class="pill-outline" href="about.html">More about us</a>
   </div>
-
   <div class="about-grid">
     <article class="vision" style="--img:url(assets/img/vision-globe.jpg)">
       <span class="tag"><svg><use href="#i-compass"/></svg>Vision</span>
       <p>A world powered by accessible, clean, reliable energy and technology.</p>
-      <span class="bite bite-pill"><a class="pill-dark sm" href="#contact">Work with us <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a></span>
+      <span class="bite bite-pill"><a class="pill-dark sm" href="about.html">Our story <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a></span>
     </article>
     <article class="mission">
       <span class="tag"><svg><use href="#i-target"/></svg>Mission</span>
@@ -403,61 +395,42 @@
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section class="frame section contact" id="contact" style="--img:url(assets/img/solar-farm-sunset.jpg)">
-  <div class="contact-copy">
+<!-- ================= CTA BAND ================= -->
+<section class="frame section cta-band" style="--img:url(assets/img/solar-farm-sunset.jpg)">
+  <div class="cta-copy">
     <p class="eyebrow light">Request a quote</p>
     <h2 class="h2">Tell us about your site</h2>
     <p class="lead">We usually reply within one business day.</p>
-    <ul class="contact-list">
-      <li><svg><use href="#i-pin"/></svg><span>16 Bure Close, Avondale, Harare</span></li>
-      <li><svg><use href="#i-phone"/></svg><span><a href="tel:+263773275590">+263 773 275 590</a><br><a href="tel:+263712160054">+263 712 160 054</a></span></li>
-      <li><svg><use href="#i-mail"/></svg><a href="mailto:sales@omnitek.co.zw">sales@omnitek.co.zw</a></li>
-      <li><svg><use href="#i-clock"/></svg><span>Mon to Fri 08:00 to 17:00<br>Sat 09:00 to 13:00</span></li>
-    </ul>
   </div>
-
-  <form class="quote" id="quoteForm" novalidate>
-    <div class="svc-pick" role="radiogroup" aria-label="Service">
-      <label><input type="radio" name="service" value="Solar Solutions" checked><span><svg><use href="#i-sun"/></svg>Solar</span></label>
-      <label><input type="radio" name="service" value="Smart Security"><span><svg><use href="#i-shield"/></svg>Security</span></label>
-      <label><input type="radio" name="service" value="Unified Communications"><span><svg><use href="#i-video"/></svg>Comms</span></label>
-      <label><input type="radio" name="service" value="IT & Software"><span><svg><use href="#i-code"/></svg>IT</span></label>
-    </div>
-    <div class="row2">
-      <label class="fld"><span>Name</span><input name="name" required autocomplete="name"><em>Please enter your name.</em></label>
-      <label class="fld"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" placeholder="+263"></label>
-    </div>
-    <label class="fld"><span>Email</span><input name="email" type="email" required autocomplete="email"><em>Enter a valid email address.</em></label>
-    <label class="fld"><span>Message</span><textarea name="message" rows="4" required placeholder="Where is the site, and what needs powering or protecting?"></textarea><em>Please write a short message.</em></label>
-    <div class="send">
-      <button class="pill-dark wa" type="submit" value="whatsapp"><svg class="lead-ic"><use href="#i-whatsapp"/></svg>Send via WhatsApp <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></button>
-      <button class="pill-outline" type="submit" value="email">Send by email</button>
-    </div>
-    <small class="fine">We never share your details.</small>
-  </form>
+  <div class="cta-actions">
+    <a class="pill-dark on-dark" href="contact.html">Start a quote <span class="pill-arrow"><svg><use href="#i-arrow"/></svg></span></a>
+    <a class="pill-ghost" href="https://wa.me/263773275590" target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg>WhatsApp us</a>
+  </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
   <div class="foot-inner">
     <div class="foot-brand">
       <img src="assets/omnitek-logo-white.png" alt="Omnitek, Tech Savvies" width="1216" height="599" loading="lazy">
       <p>Reliable energy and technology, engineered to suit your business.</p>
+      <p class="script foot-sign" aria-hidden="true">Tech Savvies</p>
       <a class="wa-link" href="https://wa.me/263773275590" target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg>Chat on WhatsApp</a>
     </div>
     <div class="foot-col">
       <h4>Solutions</h4>
-      <a href="#solar" data-tab="solar">Solar</a>
-      <a href="#security" data-tab="security">Security</a>
-      <a href="#comms" data-tab="comms">Comms</a>
-      <a href="#it" data-tab="it">IT &amp; Software</a>
+      <a href="solar.html">Solar</a>
+      <a href="security.html">Security</a>
+      <a href="communications.html">Communications</a>
+      <a href="it-software.html">IT &amp; Software</a>
+      <a href="smart-sites.html">Smart sites</a>
     </div>
     <div class="foot-col">
       <h4>Company</h4>
-      <a href="#about">About us</a>
-      <a href="#why">Why Omnitek</a>
-      <a href="#process">How we deliver</a>
+      <a href="about.html">About us</a>
+      <a href="about.html#why">Why Omnitek</a>
+      <a href="about.html#process">How we deliver</a>
+      <a href="contact.html">Contact</a>
       <a href="mailto:sales@omnitek.co.zw?subject=Careers%20at%20Omnitek">Careers</a>
     </div>
     <div class="foot-contact">
@@ -475,6 +448,7 @@
 </footer>
 
 <a class="wa-fab" href="https://wa.me/263773275590" target="_blank" rel="noopener" aria-label="Chat with Omnitek on WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
+
 
 <script src="main.js"></script>
 </body>
